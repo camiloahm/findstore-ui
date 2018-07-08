@@ -1,4 +1,11 @@
-<h1>Jumbo Stores</h1>
+
+<div class="header">
+  <a href="http://www.jumbo.com" class="logo">
+  <img alt="jumbo logo" src="./assets/images/logo-jumbo.png">
+  </a>
+  <div class="header-right">
+  </div>
+</div>
 
 <agm-map 
   [latitude]="lat"
@@ -18,7 +25,14 @@
       (dragEnd)="markerDragEnd(m, $event)">
       
     <agm-info-window>
-      <strong>InfoWindow content</strong>
+      <strong>{{m.label}}</strong>
+			<ul>
+				<li>City: {{m.label}}</li>
+				<li>Postal Code: {{m.label}}</li>
+				<li>Today Open: {{m.label}}</li>
+				<li>Today Close: {{m.label}}</li>
+				<li>Location Type: {{m.label}}</li>
+			</ul>
     </agm-info-window>
     
   </agm-marker>
@@ -31,3 +45,5 @@
   </agm-circle>
 
 </agm-map>
+
+<h2>Click on your Location Please</h2>

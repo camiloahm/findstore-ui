@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.header img {
+	float: none;
+	width: 280px;
+	height: 56px;
+	background: #555;
+	position: absolute;
+    left: 60px;
+    top: 15.5px;
+}

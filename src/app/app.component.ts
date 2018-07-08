@@ -16,7 +16,7 @@ export class AppComponent {
   markers: Marker[] = [];
 
   // google maps zoom level 
-  zoom = 7;
+  zoom = 8;
 
   // initial center position for the map
   lat = 51.673858;
@@ -35,7 +35,7 @@ export class AppComponent {
 
     // Removes my position after click
     this.markers = [];
-    
+
     this.markers.push({
       lat: lat,
       lng: lng,
@@ -88,4 +88,9 @@ interface Marker {
   label?: string;
   draggable: boolean;
   me?: boolean;
+  street?: string;
+  postalCode?: string;
+  todayOpen?: string;
+  todayClose?: string;
+  locationType?: string;
 }
