@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common'; 
-import { AgmCoreModule } from '@agm/core';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
+import {AgmCoreModule} from '@agm/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
 
 @NgModule({
-  imports:      [
+  imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
       apiKey: 'AIzaSyDNsnQ0r-bD5KurNAry2vQXq6ZeOJu2zZM'
     })
   ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

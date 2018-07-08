@@ -26,13 +26,15 @@
       
     <agm-info-window>
       <strong>{{m.label}}</strong>
+      		<div *ngIf="!m.me">
 			<ul>
-				<li>City: {{m.label}}</li>
-				<li>Postal Code: {{m.label}}</li>
-				<li>Today Open: {{m.label}}</li>
-				<li>Today Close: {{m.label}}</li>
-				<li>Location Type: {{m.label}}</li>
+				<li>City: {{m.city}}</li>
+				<li>Postal Code: {{m.postalCode}}</li>
+				<li>Today Open: {{m.todayOpen}}</li>
+				<li>Today Close: {{m.todayClose}}</li>
+				<li>Location Type: {{m.locationType}}</li>
 			</ul>
+			</div>
     </agm-info-window>
     
   </agm-marker>
@@ -46,4 +48,4 @@
 
 </agm-map>
 
-<h2>Click on your Location Please</h2>
+<h2></h2>

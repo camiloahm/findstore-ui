@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {MouseEvent} from '@agm/core';
+import {CommonModule} from '@angular/common';
 
 
 import {StoreService} from './store.service';
@@ -74,7 +75,13 @@ export class AppComponent {
         lat: store.latitude,
         lng: store.longitude,
         label: store.addressName,
-        draggable: false
+        draggable: false,
+        street: store.street,
+        postalCode: store.postalCode,
+        todayOpen: store.todayOpen,
+        todayClose: store.todayClose,
+        locationType: store.locationType,
+        city: store.city
       };
     });
   }
@@ -93,4 +100,5 @@ interface Marker {
   todayOpen?: string;
   todayClose?: string;
   locationType?: string;
+  city?: string
 }

@@ -15,5 +15,5 @@ export class StoreData {
   sapStoreID: string;
   todayClose: string;
   longitude: number;
-  latitude: number;
+  latitude:   number;
 }
