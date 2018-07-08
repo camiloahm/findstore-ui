@@ -34,13 +34,14 @@ export class AppComponent {
     const lng = $event.coords.lng;
 
     // Removes my position after click
-    this.markers = this.markers.filter(marker => !marker.label.match('Me'));
-
+    this.markers = [];
+    
     this.markers.push({
       lat: lat,
       lng: lng,
       label: 'Me',
       draggable: false,
+      me: true
     });
 
     this.findNearStores(lat, lng);
@@ -53,8 +54,10 @@ export class AppComponent {
 
   findNearStores(lat: number, lng: number) {
     return this.storeService.getCloseStores(lat, lng).subscribe(
-      data => this.markers.concat(this.mapStoresToMarkers(data))
-    );
+      (data: StoreData[]) => {
+        const response: Marker[] = this.mapStoresToMarkers(data);
+        this.markers = this.markers.concat(response);
+      });
   }
 
 
@@ -67,11 +70,11 @@ export class AppComponent {
 
   mapStoresToMarkers(stores: Array<StoreData>) {
     return stores.map((store) => {
-      return <Marker>{
+      return {
         lat: store.latitude,
         lng: store.longitude,
         label: store.addressName,
-        draggable: false,
+        draggable: false
       };
     });
   }
@@ -84,4 +87,5 @@ interface Marker {
   lng: number;
   label?: string;
   draggable: boolean;
+  me?: boolean;
 }
