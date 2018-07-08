@@ -17,11 +17,11 @@ export class AppComponent {
   markers: Marker[] = [];
 
   // google maps zoom level 
-  zoom = 8;
+  zoom = 11;
 
   // initial center position for the map
-  lat = 51.673858;
-  lng = 7.815982;
+  lat = 51.6047547;
+  lng = 5.4735158;
 
   constructor(private storeService: StoreService) {
   }
@@ -42,7 +42,8 @@ export class AppComponent {
       lng: lng,
       label: 'Me',
       draggable: false,
-      me: true
+      me: true,
+      iconUrl: './assets/images/smalluser.png'
     });
 
     this.findNearStores(lat, lng);
@@ -76,7 +77,8 @@ export class AppComponent {
         lng: store.longitude,
         label: store.addressName,
         draggable: false,
-        street: store.street,
+        iconUrl: './assets/images/smallmarker.ico',
+        street: store.street.concat(' ',store.street2,' ',store.street3),
         postalCode: store.postalCode,
         todayOpen: store.todayOpen,
         todayClose: store.todayClose,
@@ -96,6 +98,7 @@ interface Marker {
   draggable: boolean;
   me?: boolean;
   street?: string;
+  iconUrl?: string;
   postalCode?: string;
   todayOpen?: string;
   todayClose?: string;

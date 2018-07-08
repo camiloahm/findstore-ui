@@ -20,16 +20,18 @@
       (markerClick)="clickedMarker(m.label, i)"
       [latitude]="m.lat"
       [longitude]="m.lng"
-      [label]="m.label"
+      [label]="{ color: '#000000',fontFamily:'Arial', text:' ',verticalAlign:'text-bottom',labelClass:'className' }"
       [markerDraggable]="m.draggable"
-      (dragEnd)="markerDragEnd(m, $event)">
-      
+      (dragEnd)="markerDragEnd(m, $event)"
+      [iconUrl]="m.iconUrl"
+      >
     <agm-info-window>
       <strong>{{m.label}}</strong>
       		<div *ngIf="!m.me">
 			<ul>
 				<li>City: {{m.city}}</li>
 				<li>Postal Code: {{m.postalCode}}</li>
+				<li>Address: {{m.street}}</li>
 				<li>Today Open: {{m.todayOpen}}</li>
 				<li>Today Close: {{m.todayClose}}</li>
 				<li>Location Type: {{m.locationType}}</li>
@@ -47,5 +49,19 @@
   </agm-circle>
 
 </agm-map>
+<p>
+<div style="overflow-x:auto;">
+<h1 style="text-align: center;">Use our locator to find the nearest Jumbo store to you</h1>
+<table style="width:100%">
+    <tr>
+        <td style="text-align: right;"><h3 style="font-family:verdana;">Click on the map to mark your position</h3></td>
+        <td style="text-align: left:;"><img src="./assets/images/smalluser.png" height=50 width=50></td>
+    </tr>
+    <tr>
+        <td style="text-align: right;"><h3 style="font-family:verdana;">Click on the markers to get more information</h3></td>
+        <td style="text-align: left:;"><img src="./assets/images/smallmarker.ico" height=50 width=50></td>
+    </tr>
+</table>
+</div>
 
-<h2 style="font-family:verdana;">Click to select your location in the map</h2>
+
