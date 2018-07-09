@@ -28,7 +28,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 `Online IDE`
-If you don't want to set up a local `IDE` you can try the app without some features like http calls here 
+If you don't want to set up a local `IDE` you can play with the front end app here
 https://stackblitz.com/edit/jumbo-ysq3pp
 
 
