@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: findstore-ui
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: findstore-ui
+        tier: frontend
+    spec:
+      containers:
+      - name: findstore-ui
+        image: camiloahm/findstore-ui
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+          # If your cluster config does not include a dns service, then to
+          # instead access environment variables to find service host
+          # info, comment out the 'value: dns' line above, and uncomment the
+          # line below:
+          # value: env
+        ports:
+        - containerPort: 80
