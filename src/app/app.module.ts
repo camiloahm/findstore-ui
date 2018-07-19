@@ -16,7 +16,7 @@ import {AppComponent} from './app.component';
     HttpClientModule,
     AgmCoreModule.forRoot({
       // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
-      apiKey: 'AIzaSyDNsnQ0r-bD5KurNAry2vQXq6ZeOJu2zZM'
+      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
   ],
   declarations: [AppComponent],
